@@ -25,6 +25,14 @@ html {
   line-height: 1.375; /* ~22px */
 }
 
+body {
+  background-color: #eee;
+  font-size: 14px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  line-height: 1.571;
+  letter-spacing: .01em;
+}
+
 a {
   color: #0074c2;
 }

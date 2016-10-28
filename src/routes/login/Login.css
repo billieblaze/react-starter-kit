@@ -9,18 +9,38 @@
 @import '../../components/variables.css';
 
 .root {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 50px;
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 0 40px;
+  padding: 40px;
   max-width: 380px;
+  background-color: #fff;
 }
 
 .lead {
   font-size: 1.25em;
+}
+
+.logo {
+  text-align:  center;
+ }
+.logo a{
+    text-decoration: none;
+ }
+
+ .logo h1{
+  font-family: "Brandon Grotesque", "brandon-grotesque", "Ubuntu","Open Sans", "Proxima Nova","Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 33px;
+    color: #444;
+    margin: 20px 0;
+}
+
+.logo span {
+    color: #A7D253;
 }
 
 .formGroup {
@@ -65,7 +85,7 @@
   outline: 0;
   border: 1px solid #373277;
   border-radius: 0;
-  background: #373277;
+  background: #a8d05b;
   color: #fff;
   text-align: center;
   text-decoration: none;
