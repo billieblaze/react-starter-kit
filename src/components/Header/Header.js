@@ -8,11 +8,30 @@
  */
 
 import React from 'react';
+import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
 import Link from '../Link';
 import Navigation from '../Navigation';
 import logoUrl from './tw_logo_wg_43px.png';
+
+const messages = defineMessages({
+  brand: {
+    id: 'header.brand',
+    defaultMessage: 'Your Company Brand',
+    description: 'Brand name displayed in header',
+  },
+  bannerTitle: {
+    id: 'header.banner.title',
+    defaultMessage: 'React',
+    description: 'Title in page header',
+  },
+  bannerDesc: {
+    id: 'header.banner.desc',
+    defaultMessage: 'Complex web apps made easy',
+    description: 'Description in header',
+  },
+});
 
 function Header() {
   return (
@@ -22,10 +41,9 @@ function Header() {
         <Link className={s.brand} to="/">
           <img src={logoUrl} width="38" height="38" alt="React" />
         </Link>
-
       </div>
     </div>
   );
 }
 
-export default withStyles(s)(Header);
+export default injectIntl(withStyles(s)(Header));

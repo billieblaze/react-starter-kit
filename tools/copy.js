@@ -30,12 +30,14 @@ async function copy() {
     copyFile('LICENSE.txt', 'build/LICENSE.txt'),
     copyDir('src/content', 'build/content'),
     copyDir('src/public', 'build/public'),
+    copyDir('src/messages', 'build/messages'),
   ]);
 
   if (process.argv.includes('--watch')) {
     const watcher = await new Promise((resolve, reject) => {
       gaze([
         'src/content/**/*',
+        'src/messages/**/*',
         'src/public/**/*',
       ], (err, val) => (err ? reject(err) : resolve(val)));
     });

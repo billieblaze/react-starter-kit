@@ -9,8 +9,17 @@
 
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import Layout from '../../components/Layout';
 import s from './Login.css';
+
+const messages = defineMessages({
+  or: {
+    id: 'navigation.separator.or',
+    defaultMessage: 'or',
+    description: 'Last separator in list, lowercase "or"',
+  }
+});
 
 function Login({ title }) {
   return (
@@ -49,7 +58,9 @@ function Login({ title }) {
               </button>
             </div>
           </form>
-          <strong className={s.lineThrough}>OR</strong>
+          <strong className={s.lineThrough}>
+            <FormattedMessage {...messages.or} />
+          </strong>
           <div className={s.formGroup}>
             <a className={s.facebook} href="/login/facebook">
               <svg

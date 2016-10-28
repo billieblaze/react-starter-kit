@@ -8,17 +8,26 @@
  */
 
 import React, { PropTypes } from 'react';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Navigation.css';
 import Link from '../Link';
 
+const messages = defineMessages({
+  login: {
+    id: 'navigation.login',
+    defaultMessage: 'Log in',
+    description: 'Log in link in header',
+  }
+});
+
 function Navigation({ className }) {
   return (
     <div className={cx(s.root, className)} role="navigation">
-          <Link className={s.link} to="/login">Log in</Link>
-      <span className={s.spacer}>or</span>
-      <Link className={cx(s.link, s.highlight)} to="/register">Sign up</Link>
+      <Link className={s.link} to="/login">
+        <FormattedMessage {...messages.login} />
+      </Link>
     </div>
   );
 }
